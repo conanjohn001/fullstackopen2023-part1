@@ -25,10 +25,7 @@ const Header =(props) => {
   );
 }
 
-const Content =(props)=>{
-  let content_views = [];
-
-  const Eachpart =(props)=>{
+const Eachpart =(props)=>{
     return(
       <p>
         {props.eachpart.name}, {props.eachpart.exercises}
@@ -36,8 +33,11 @@ const Content =(props)=>{
     );
   }
 
-  props.content_parts.forEach(element => {
-    content_views.push(<Eachpart eachpart={element} />)    
+const Content =(props)=>{
+  const content_views = [];  
+
+  props.content_parts.forEach(i => {
+    content_views.push(<Eachpart eachpart={i} />)    
   });
 
   return(
